@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title || 'Harvest Harmony - Agricultural Machinery Rental Platform' %></title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-icon">🚜</div>
+            <h2>Loading Harvest Harmony...</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="search-modal">
+        <div class="search-modal__content">
+            <button class="search-modal__close" id="close-search">&times;</button>
+            <h2>🔍 Search Machines</h2>
+            <input type="text" class="search-modal__input" id="search-input"
+                placeholder="Search by name, operator, or crop type...">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Machine Details Modal -->
+    <div class="modal" id="machine-modal">
+        <div class="modal__content" id="machine-modal-content">
+            <!-- Machine details will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="booking-modal">
+        <div class="modal__content" id="booking-modal-content">
+            <!-- Booking form will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="modal" id="review-modal">
+        <div class="modal__content" id="review-modal-content">
+            <!-- Review form will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div class="notification-container" id="notification-container"></div>

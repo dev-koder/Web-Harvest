@@ -1,0 +1,124 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navigation') %>
+
+<!-- Landing Page -->
+<main class="site" id="landing-page">
+    <header class="site__header">
+        <div class="container">
+            <div class="site__logo">🚜 Harvest Harmony 🌾</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero__inner">
+            <h2 class="hero__title">Hey there! Ready to get farming?</h2>
+            <p class="hero__subtitle">
+                Connect with awesome machine operators or find farmers who need your gear! It's super easy and fun!
+                🌱
+            </p>
+            <p class="hero__prompt">What brings you here today?</p>
+            <div class="hero__emoji" aria-hidden="true">🔧</div>
+
+            <div class="cta">
+                <div class="cta__group">
+                    <button class="btn btn--green" onclick="switchToFarmer()">I'm a Farmer!</button>
+                    <p class="cta__caption">Need machines for your crops?</p>
+                </div>
+                <div class="cta__group">
+                    <button class="btn btn--orange" onclick="switchToOperator()">I'm an Operator!</button>
+                    <p class="cta__caption">Got machines to share?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <button class="btn btn--green footer__btn" onclick="showSupportModal()">💬 Need Support? We're
+                Here!</button>
+        </div>
+    </footer>
+</main>
+
+<!-- Farmer Dashboard -->
+<main class="site dashboard" id="farmer-page" style="display: none;">
+    <div class="dashboard__layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar__header">
+                <div class="sidebar__logo">🚜 Harvest Harmony</div>
+                <p class="sidebar__greeting">Hey there, farmer! 👋</p>
+            </div>
+            <nav class="sidebar__nav">
+                <a href="#" class="sidebar__link sidebar__link--active" data-view="browse">
+                    <span class="sidebar__icon">🔍</span>
+                    Browse Machines
+                </a>
+                <a href="#" class="sidebar__link" data-view="bookings">
+                    <span class="sidebar__icon">📄</span>
+                    My Bookings
+                </a>
+                <a href="#" class="sidebar__link" data-view="profile">
+                    <span class="sidebar__icon">👤</span>
+                    My Profile
+                </a>
+                <a href="#" class="sidebar__link" data-view="support">
+                    <span class="sidebar__icon">🆘</span>
+                    Need Support
+                </a>
+                <a href="#" class="sidebar__link" onclick="switchToLanding()">
+                    <span class="sidebar__icon">🏠</span>
+                    Back to Home
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="dashboard__content" id="farmer-content">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+    </div>
+</main>
+
+<!-- Operator Dashboard -->
+<main class="site dashboard" id="operator-page" style="display: none;">
+    <div class="dashboard__layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar__header">
+                <div class="sidebar__logo">🚜 Harvest Harmony</div>
+                <p class="sidebar__greeting">Hey there, operator! 🛠️</p>
+            </div>
+            <nav class="sidebar__nav">
+                <a href="#" class="sidebar__link sidebar__link--active" data-view="requests">
+                    <span class="sidebar__icon">📄</span>
+                    Booking Requests
+                </a>
+                <a href="#" class="sidebar__link" data-view="earnings">
+                    <span class="sidebar__icon">💰</span>
+                    My Earnings
+                </a>
+                <a href="#" class="sidebar__link" data-view="profile">
+                    <span class="sidebar__icon">👤</span>
+                    My Profile
+                </a>
+                <a href="#" class="sidebar__link" data-view="support">
+                    <span class="sidebar__icon">🆘</span>
+                    Need Support
+                </a>
+                <a href="#" class="sidebar__link" onclick="switchToLanding()">
+                    <span class="sidebar__icon">🏠</span>
+                    Back to Home
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="dashboard__content" id="operator-content">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

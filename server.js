@@ -7,11 +7,15 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Set EJS as view engine
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('.')); // Serve static files (HTML, CSS, JS)
+app.use(express.static('.'));  // Serve static files (CSS, JS, images)
 
 // MongoDB Connection with SSL options
 const mongooseOptions = {
@@ -37,9 +41,9 @@ app.use('/api/machines', machineRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/favorites', favoriteRoutes);
 
-// Root route
+// Root route - Render EJS template
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.render('index', { title: 'Harvest Harmony - Agricultural Machinery Rental Platform' });
 });
 
 // Health check endpoint

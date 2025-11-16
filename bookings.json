@@ -1,0 +1,58 @@
+{
+  "bookingRequests": [
+    {
+      "id": 1,
+      "farmerName": "Naman Sir 🧑‍🌾",
+      "phone": "+91 98765 43210",
+      "location": "Happy Farm Village, Gujarat 🌻",
+      "date": "2024-09-16",
+      "startTime": "08:00 AM",
+      "endTime": "10:00 AM",
+      "duration": "2 hours",
+      "machineId": 1,
+      "machineName": "Rajesh's Cool Tractor 🚜",
+      "crop": "Wheat 🌾",
+      "amount": 2400,
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "farmerName": "Saurabh Sir 🧑‍🌾",
+      "phone": "+91 87654 32109",
+      "location": "Green Fields Paradise, Punjab 🌱",
+      "date": "2024-09-17",
+      "startTime": "06:00 AM",
+      "endTime": "12:00 PM",
+      "duration": "6 hours",
+      "machineId": 2,
+      "machineName": "The Harvest Beast 🌾",
+      "crop": "Rice 🍚",
+      "amount": 15000,
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "farmerName": "Sachin Sir 🧑‍🌾",
+      "phone": "+91 76543 21098",
+      "location": "Harvest Valley, Haryana 🌾",
+      "date": "2024-09-18",
+      "startTime": "02:00 PM",
+      "endTime": "06:00 PM",
+      "duration": "4 hours",
+      "machineId": 3,
+      "machineName": "Thresher Thunder ⚡",
+      "crop": "Barley 🌾",
+      "amount": 3200,
+      "status": "accepted"
+    }
+  ],
+  "earnings": {
+    "today": 5600,
+    "weekly": 28400,
+    "monthly": 89200,
+    "totalBookings": 47,
+    "completedBookings": 44,
+    "pendingBookings": 3,
+    "successRate": 94
+  }
+}

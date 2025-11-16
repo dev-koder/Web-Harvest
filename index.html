@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvest Harmony - Prototype!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-icon">🚜</div>
+            <h2>Loading Harvest Harmony...</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="search-modal">
+        <div class="search-modal__content">
+            <button class="search-modal__close" id="close-search">&times;</button>
+            <h2>🔍 Search Machines</h2>
+            <input type="text" class="search-modal__input" id="search-input"
+                placeholder="Search by name, operator, or crop type...">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Machine Details Modal -->
+    <div class="modal" id="machine-modal">
+        <div class="modal__content" id="machine-modal-content">
+            <!-- Machine details will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="booking-modal">
+        <div class="modal__content" id="booking-modal-content">
+            <!-- Booking form will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="modal" id="review-modal">
+        <div class="modal__content" id="review-modal-content">
+            <!-- Review form will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div class="notification-container" id="notification-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar__inner">
+            <div class="brand">🚜 Harvest Harmony - Prototype! 🌾</div>
+            <div class="navbar__right">
+                <span class="current" id="current-page">Current: Landing</span>
+                <button class="search-btn" id="open-search" title="Search Machines">
+                    <span>🔍</span>
+                </button>
+                <div class="chips">
+                    <button class="chip chip--active" data-page="landing">🏠 Landing</button>
+                    <button class="chip" data-page="farmer">🌾 Farmer</button>
+                    <button class="chip" data-page="operator">🔧 Operator</button>
+                </div>
+                <div class="palette">
+                    <span class="dot dot--green"></span>
+                    <span class="dot dot--orange"></span>
+                    <span class="palette__label">Theme Colors</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Landing Page -->
+    <main class="site" id="landing-page">
+        <header class="site__header">
+            <div class="container">
+                <div class="site__logo">🚜 Harvest Harmony 🌾</div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container hero__inner">
+                <h2 class="hero__title">Hey there! Ready to get farming?</h2>
+                <p class="hero__subtitle">
+                    Connect with awesome machine operators or find farmers who need your gear! It's super easy and fun!
+                    🌱
+                </p>
+                <p class="hero__prompt">What brings you here today?</p>
+                <div class="hero__emoji" aria-hidden="true">🔧</div>
+
+                <div class="cta">
+                    <div class="cta__group">
+                        <button class="btn btn--green" onclick="switchToFarmer()">I'm a Farmer!</button>
+                        <p class="cta__caption">Need machines for your crops?</p>
+                    </div>
+                    <div class="cta__group">
+                        <button class="btn btn--orange" onclick="switchToOperator()">I'm an Operator!</button>
+                        <p class="cta__caption">Got machines to share?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <button class="btn btn--green footer__btn" onclick="showSupportModal()">💬 Need Support? We're
+                    Here!</button>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Farmer Dashboard -->
+    <main class="site dashboard" id="farmer-page" style="display: none;">
+        <div class="dashboard__layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar__header">
+                    <div class="sidebar__logo">🚜 Harvest Harmony</div>
+                    <p class="sidebar__greeting">Hey there, farmer! 👋</p>
+                </div>
+                <nav class="sidebar__nav">
+                    <a href="#" class="sidebar__link sidebar__link--active" data-view="browse">
+                        <span class="sidebar__icon">🔍</span>
+                        Browse Machines
+                    </a>
+                    <a href="#" class="sidebar__link" data-view="bookings">
+                        <span class="sidebar__icon">📄</span>
+                        My Bookings
+                    </a>
+                    <a href="#" class="sidebar__link" data-view="profile">
+                        <span class="sidebar__icon">👤</span>
+                        My Profile
+                    </a>
+                    <a href="#" class="sidebar__link" data-view="support">
+                        <span class="sidebar__icon">🆘</span>
+                        Need Support
+                    </a>
+                    <a href="#" class="sidebar__link" onclick="switchToLanding()">
+                        <span class="sidebar__icon">🏠</span>
+                        Back to Home
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="dashboard__content" id="farmer-content">
+                <!-- Content will be dynamically loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Operator Dashboard -->
+
+    <main class="site dashboard" id="operator-page" style="display: none;">
+        <div class="dashboard__layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar__header">
+                    <div class="sidebar__logo">🚜 Harvest Harmony</div>
+                    <p class="sidebar__greeting">Hey there, operator! 🛠️</p>
+                </div>
+                <nav class="sidebar__nav">
+                    <a href="#" class="sidebar__link sidebar__link--active" data-view="requests">
+                        <span class="sidebar__icon">📄</span>
+                        Booking Requests
+                    </a>
+                    <a href="#" class="sidebar__link" data-view="earnings">
+                        <span class="sidebar__icon">💰</span>
+                        My Earnings
+                    </a>
+                    <a href="#" class="sidebar__link" data-view="profile">
+                        <span class="sidebar__icon">👤</span>
+                        My Profile
+                    </a>
+                    <a href="#" class="sidebar__link" data-view="support">
+                        <span class="sidebar__icon">🆘</span>
+                        Need Support
+                    </a>
+                    <a href="#" class="sidebar__link" onclick="switchToLanding()">
+                        <span class="sidebar__icon">🏠</span>
+                        Back to Home
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="dashboard__content" id="operator-content">
+                <!-- Content will be dynamically loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- OOP JavaScript file - Uses Classes and JSON -->
+    <script src="oop.js"></script>
+    <!-- Main JavaScript file - Enhanced with MongoDB -->
+    <script src="script-enhanced.js"></script>
+</body>
+
+</html>

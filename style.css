@@ -604,6 +604,90 @@ body {
     justify-content: flex-end;
 }
 
+/* Authentication Styles */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.user-greeting {
+    font-size: 13px;
+    font-weight: 600;
+    color: hsl(var(--text-dark));
+}
+
+.user-role {
+    font-size: 11px;
+    color: hsl(var(--text-med));
+    text-transform: capitalize;
+}
+
+.btn-logout {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-login,
+.btn-register {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn-login {
+    background: white;
+    color: hsl(var(--green));
+    border: 2px solid hsl(var(--green));
+}
+
+.btn-login:hover {
+    background: hsl(var(--green));
+    color: white;
+}
+
+.btn-register {
+    background: hsl(var(--orange));
+    color: white;
+    border: 2px solid hsl(var(--orange));
+}
+
+.btn-register:hover {
+    background: hsl(var(--orange) / 0.8);
+    transform: scale(1.05);
+}
+
 /* Search Button */
 .search-btn {
     background: hsl(var(--green));

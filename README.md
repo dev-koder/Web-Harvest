@@ -59,13 +59,15 @@ This will install:
 
 ### 2. Environment Configuration
 
-The `.env` file is already configured with your MongoDB connection string:
+Create a `.env` file in the root directory with your MongoDB connection string:
 
 ```
-MONGODB_URI=mongodb+srv://newearntry406_db_user:jR06mnRUqsbtn3Ud@cluster0.5setvcp.mongodb.net/harvest_harmony?retryWrites=true&w=majority&appName=Cluster0
+MONGODB_URI=your_mongodb_connection_string_here
 PORT=3000
 NODE_ENV=development
 ```
+
+**Note:** Get your MongoDB connection string from [MongoDB Atlas](https://cloud.mongodb.com)
 
 ### 3. Seed the Database
 

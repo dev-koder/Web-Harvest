@@ -33,9 +33,9 @@ Your project now has a complete Node.js + Express + MongoDB backend!
 There's currently an SSL connection issue with your MongoDB Atlas cluster. You have three options:
 
 #### Option A: Update Connection String (Recommended)
-Edit `.env` file and replace the MONGODB_URI line with:
+Edit `.env` file and replace the MONGODB_URI line with your MongoDB Atlas connection string:
 ```
-MONGODB_URI=mongodb+srv://newearntry406_db_user:jR06mnRUqsbtn3Ud@cluster0.5setvcp.mongodb.net/harvest_harmony?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true
 ```
 
 #### Option B: Whitelist Your IP in MongoDB Atlas

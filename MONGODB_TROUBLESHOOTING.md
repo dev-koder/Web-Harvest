@@ -11,8 +11,10 @@ You're experiencing an SSL connection error with MongoDB Atlas. This is a common
 Update your `.env` file with these additional parameters:
 
 ```
-MONGODB_URI=mongodb+srv://newearntry406_db_user:jR06mnRUqsbtn3Ud@cluster0.5setvcp.mongodb.net/harvest_harmony?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true
 ```
+
+**Note:** Replace `<username>`, `<password>`, `<cluster>`, and `<database>` with your actual MongoDB Atlas credentials.
 
 ### Solution 2: Use Connection Options
 

@@ -283,7 +283,7 @@ app.use(express.static(__dirname));  // Serves index.html, style.css, script.js
 
 ### Connection String
 ```javascript
-mongodb+srv://newearntry406_db_user:jR06mnRUqsbtn3Ud@cluster0.5setvcp.mongodb.net/harvest_harmony?tls=true&tlsAllowInvalidCertificates=true
+mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?tls=true&tlsAllowInvalidCertificates=true
 ```
 
 **Parts:**

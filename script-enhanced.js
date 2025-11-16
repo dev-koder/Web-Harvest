@@ -621,7 +621,7 @@ function showFarmerView(view) {
                                         <p>💰 <strong>Amount:</strong> ₹${booking.amount}</p>
                                         ${hideReviewButton ? '<p style="color: #4caf50; margin-top: 10px;">✅ <strong>You already reviewed this machine</strong></p>' : ''}
                                     </div>
-                                    ${booking.status === 'completed' && !hideReviewButton ? `
+                                    ${(booking.status === 'completed' || booking.status === 'accepted' || booking.status === 'pending') && !hideReviewButton ? `
                                         <div class="booking-card__actions">
                                             <button class="btn-primary" onclick="window.openReviewModal('${booking._id}', ${booking.machineId}, \`${booking.machineName}\`)">
                                                 ⭐ Write Review
